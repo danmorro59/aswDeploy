@@ -10,13 +10,13 @@ export const MetubeProvider =({children}) =>{
     const [videos, setVideos] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:3001/Users')
+        fetch('/Users')
         .then((response)=> response.json())
         .then((data)=>setUsers(data))
     },[])
 //fetch for comments by date
     useEffect(() => {
-        fetch('http://localhost:3001/CommentsAll')
+        fetch('/CommentsAll')
           .then(response => response.json())
           .then(data => {
             const sortedComments = data.sort((a, b) => new Date(b.date_published) - new Date(a.date_published));
@@ -26,7 +26,7 @@ export const MetubeProvider =({children}) =>{
 
 //fetch for comments liked in ASC
   useEffect(() => {
-    fetch('http://localhost:3001/CommentsAll')
+    fetch('/CommentsAll')
       .then(response => response.json())
       .then(data => {
         // Sort comments by number of likes in descending order
@@ -35,7 +35,7 @@ export const MetubeProvider =({children}) =>{
       });
   }, []);
   useEffect(() => {
-    fetch('http://localhost:3001/Videos')
+    fetch('/Videos')
       .then((response) => response.json()) // Add parentheses after .json
       .then((data) => {
         setVideos(data);

@@ -26,19 +26,19 @@ app.use(cors());
 //   database: "",
 // });
 
-const connectionString = process.env.DATABASE_URL
-
-// const pool = new Pool({
-//   user: "fatbo",
-//   password: "",
-//   port: 5432,
-//   host: "localhost",
-//   database: "youtube",
-// });
+ const connectionString = process.env.DATABASE_URL
 
 const pool = new Pool({
-  connectionString,
-})
+  user: "danmorro",
+  password: "",
+  port: 5432,
+  host: connectionString,
+  database: "youtube",
+});
+
+// const pool = new Pool({
+//   connectionString,
+// })
 
 const PORT = process.env.PORT || 3001;
 
