@@ -5,7 +5,7 @@ const app = express();
 const dotenv = require("dotenv")
 dotenv.config()
 
-
+app.use(express.static('public'))
 //starting this don't not to forget to migrate your table.sql
 //node server.js
 //dont forget to change your username
